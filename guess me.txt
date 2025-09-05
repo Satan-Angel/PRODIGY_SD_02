@@ -1,0 +1,31 @@
+//gessing game
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
+int main(){
+    printf("Let's play Gueesing Game :)\n");
+    srand(time(0));
+    int x=rand() % 100 + 1;
+    printf("Guess a no between 1 & 100:\n");
+    int n, count=0;
+    while(n!=x){
+        scanf("%d",&n);
+        if(n>x)
+        {
+            printf("Too High\n");
+            count++;
+        }
+        else if(n<x)
+        {
+            printf("Too Low\n");
+            count++;
+        }
+        else
+        {
+            count++;
+            printf("Perfect. You got it.\n");
+            printf("You got it rigth at %d attempt.\n",count);
+        }
+    }
+}
